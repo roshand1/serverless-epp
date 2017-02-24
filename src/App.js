@@ -1,4 +1,5 @@
 import './_hg-eppRightRailWorking.less';
+import './App.less'
 import React, { PropTypes } from 'react'
 import ReactDOM from 'react-dom'
 import { connect } from 'react-redux';

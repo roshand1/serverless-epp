@@ -37,7 +37,7 @@ export function getProvidersByFunc(){
 
 export function getPracticeModel(){
     return function(dispatch){
-        fetch('https://www.healthgrades.com/uisvc/v1_0/eppuiservice/api/Provider/GetViewModel?officeId=YBRWWS')
+        fetch('https://www.healthgrades.com/uisvc/v1_0/eppuiservice/api/Provider/GetViewModel?officeId=oo65fmp')
           .then((response)=> response.json())
           .then((response) =>{
               debugger;
