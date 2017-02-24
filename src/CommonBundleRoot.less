@@ -1,0 +1,34 @@
+﻿
+@basePath: '../node_modules/@hg/';
+@componentPath: '/src/components/';
+
+/* BEGIN THREE UI */
+@threeUIpath: '@{basePath}three-ui@{componentPath}';
+
+	@import '@{threeUIpath}_globalstyle/_globalstyle.less';
+	@import '@{threeUIpath}hgbutton/_hg-button.less';
+	@import '@{threeUIpath}HgCoin/_hg-coin.less';
+	@import '@{threeUIpath}HgFullPageSpinner/styles.less';
+	@import '@{threeUIpath}HgIcon/_hg-icon.less';
+	@import '@{threeUIpath}HgInputs/radioinput/_styles.less';
+	@import '@{threeUIpath}HgOverlay/_hg-overlay.less';
+	@import '@{threeUIpath}HgRow/_hg-row.less';
+	@import '@{threeUIpath}starrating/_styles.less';
+/* END THREE UI */
+
+/* BEGIN SYNDICATED UI */
+
+	@syndicatedUIpath: '@{basePath}syndicated-ui@{componentPath}';
+
+	/* HG Header less files */
+	@import '@{syndicatedUIpath}HgHeader/_hg-header.less';
+	@import '@{syndicatedUIpath}HgHeader/_header-mobile.less';
+	@import '@{syndicatedUIpath}HgHeader/_header-objects.less';
+
+	/* HG footer less files */
+	@import '@{syndicatedUIpath}HgFooter/_hg-footer.less';
+	@import '@{syndicatedUIpath}HgFooter/_footer-lnks.less';
+	@import '@{syndicatedUIpath}HgFooter/_footer-tabs.less';
+	@import '@{syndicatedUIpath}HgFooter/_hg-footer.less';
+
+/* END SYNDICATED UI */
