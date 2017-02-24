@@ -1,0 +1,88 @@
+﻿// HG Office Location
+// -------------------------------------
+@import '~@hg/three-ui/_globalstyle/_hg-variables';
+@import '~@hg/three-ui/_globalstyle/_hg-mixins';
+.leaflet-bottom {
+    display: none;
+}
+
+.leaflet-container {
+    margin: 0;
+}
+
+.office-location {
+    max-width: 1366px;
+    margin: 0 auto 15px;
+    padding: 0 20px;
+}
+
+.office-location-content {
+    box-shadow: 0 2px 5px 0 #a5c7d3;
+}
+
+.office-location-wrap {
+    display: table;
+    width: 100%;
+   // height: 200px;
+
+    .office-location-row {
+        display: table-row;
+    }
+    .leaflet-container {
+        display: table-cell;
+        //width: 120px;
+        width: 100%;
+        margin-bottom: 0;
+    }
+    .location-content {
+        display: table-cell;
+        padding: 20px;
+        background-color: white;
+        .hg3-star-rating {
+            margin: 0px 0 10px 0;
+        }
+        .rating-label,
+        .label-count {
+            font-size: 14px;
+            color: @blue;
+            vertical-align: bottom;
+        }
+        .rating-label {
+            margin-left: 10px;
+        }
+    }
+    .arrow {
+        display: table-cell;
+        width: 20px;
+        background-color: white;
+        vertical-align: middle;
+        font-size: 25px;
+        padding-right: 10px;
+    }
+}
+
+#component-practices{
+
+
+    
+        .hg3-visiting-offices-map{
+        @media screen and (max-width:976px){
+            flex-direction: column-reverse;
+        }
+        }
+
+    .hg3-map-navigation-item{
+        border-bottom:1px solid #ccc;
+    }
+    .hg3-office-map-display{
+    width: 100%;
+    padding-left: 25px;
+     @media screen and (max-width:976px){
+            padding-left:0;
+        }
+    }
+    .hg3-map-container{
+        width:100%;
+        height:400px;
+    }
+}

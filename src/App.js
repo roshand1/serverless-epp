@@ -9,8 +9,8 @@ import * as actions from '../redux/action';
 import HgHero from './components/HgHero/HgHero.jsx' 
 import HgPracticeInfo from './components/HgPracticeInfo/HgPracticeInfo.jsx' 
 import HgPracticeLinks from './components/HgPracticeLinks/HgPracticeLinks.jsx'  
-
 import HgOurProviders from './components/HgOurProviders/HgOurProviders.jsx'
+import HgOfficeLocation from './components/HgOfficeLocation/HgOfficeLocation.jsx'
 // import OfficeHours from './OfficeHours/OfficeHours.jsx'
 // import LeafLet from './components/HgLeaflet/HgLeaflet.jsx'
 
@@ -27,7 +27,8 @@ componentDidMount(){
 },
     render(){
       debugger;
-        var viewPracModel =this.props.practiceModel? this.props.practiceModel.practiceModel:'';
+        let viewPracModel =this.props.practiceModel? this.props.practiceModel.practiceModel:'';
+        let officeModel ={officeLocations:viewPracModel.OfficeLocations}
 
         return <div>{viewPracModel &&
                       <div id="content-section">
@@ -96,6 +97,9 @@ componentDidMount(){
                                     getProviderUrl={viewPracModel.ProviderListModel.getProviderUrl}/>
                                     <br className="clearBoth"/>
                                 </div>
+                            </div>
+                            <div id="component-location">
+                                <HgOfficeLocation isiPad={false} isMobile={false} visiting={officeModel}/>
                             </div>
                       </div>
                     }
