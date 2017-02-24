@@ -1,3 +1,4 @@
+import './_hg-eppRightRailWorking.less';
 import React, { PropTypes } from 'react'
 import ReactDOM from 'react-dom'
 import { connect } from 'react-redux';
@@ -7,9 +8,10 @@ import * as actions from '../redux/action';
 // React Components
 import HgHero from './components/HgHero/HgHero.jsx' 
 import HgPracticeInfo from './components/HgPracticeInfo/HgPracticeInfo.jsx' 
-import HgPracticeLinks from './components/HgPracticeLinks/HgPracticeLinks.jsx' 
+import HgPracticeLinks from './components/HgPracticeLinks/HgPracticeLinks.jsx'  
+
+import HgOurProviders from './components/HgOurProviders/HgOurProviders.jsx'
 // import OfficeHours from './OfficeHours/OfficeHours.jsx'
-import Providers from './components/HgOurProviders/HgOurProviders.jsx'
 // import LeafLet from './components/HgLeaflet/HgLeaflet.jsx'
 
 const App = React.createClass({
@@ -23,7 +25,6 @@ componentDidMount(){
  const { getPracticeModel} = this.props;
  getPracticeModel();
 },
-//  <Providers isMobile={false} providerCount={this.props.providers.providers.providerCount} getProviderUrl={'something'} providerArr={this.props.providers.providers.providerArr}/>
     render(){
       debugger;
         var viewPracModel =this.props.practiceModel? this.props.practiceModel.practiceModel:'';
@@ -50,7 +51,7 @@ componentDidMount(){
                             </div>
                           </div>
                           <div className="practice-links clearfix">
-                            <section id="component-hgPracticeLinks">
+                            <div id="component-hgPracticeLinks">
                                 {viewPracModel.ShowAboutUs && 
                                     <HgPracticeLinks coinOpts={viewPracModel.AboutUsLinkModel.coinOpts}
                                     href={viewPracModel.AboutUsLinkModel.href}
@@ -83,8 +84,19 @@ componentDidMount(){
                                     titleColor={viewPracModel.PracticesLinkModel.titleColor}
                                     titleText={viewPracModel.PracticesLinkModel.titleText}/>
                                 }
-                            </section>
+                            </div>
                           </div>
+
+                            <div>
+                                <div id="component-hgProviders" className="componentWrap">
+                                    <h2>Our Providers</h2>
+                                    <HgOurProviders isMobile={viewPracModel.ProviderListModel.isMobile}
+                                    providerArr={viewPracModel.ProviderListModel.providerArr}
+                                    providerCount={viewPracModel.ProviderListModel.providerCount}
+                                    getProviderUrl={viewPracModel.ProviderListModel.getProviderUrl}/>
+                                    <br className="clearBoth"/>
+                                </div>
+                            </div>
                       </div>
                     }
                 </div>
