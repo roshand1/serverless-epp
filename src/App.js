@@ -17,11 +17,6 @@ import HgOfficeLocation from './components/HgOfficeLocation/HgOfficeLocation.jsx
 import HgFooter from '@hg/syndicated-ui/src/components/HgFooter/HgFooter';
 
 const App = React.createClass({
-
-// componentWillMount(){
-//  const { getProvidersByFunc} = this.props;
-//  getProvidersByFunc();
-// },
   
 componentDidMount(){
  const { getPracticeModel} = this.props;
@@ -96,7 +91,8 @@ componentDidMount(){
                                     <HgOurProviders isMobile={viewPracModel.ProviderListModel.isMobile}
                                     providerArr={viewPracModel.ProviderListModel.providerArr}
                                     providerCount={viewPracModel.ProviderListModel.providerCount}
-                                    getProviderUrl={viewPracModel.ProviderListModel.getProviderUrl}/>
+                                    getProviderUrl={viewPracModel.ProviderListModel.getProviderUrl}
+                                    practiceId={viewPracModel.PracticeId}/>
                                     <br className="clearBoth"/>
                                 </div>
                             </div>

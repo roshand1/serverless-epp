@@ -1,5 +1,8 @@
 import './_hg-our-providers.less';
 import React, { PropTypes } from 'react';
+import { connect } from 'react-redux';
+import {getProvidersByOfficeId} from '../../../redux/action';
+import * as actions from '../../../redux/action';
 import ReactDOM from 'react-dom';
 import PureRenderMixin from 'react/lib/ReactComponentWithPureRenderMixin';
 import HgMiniProviderCard from './HgMiniProviderCard.jsx';
@@ -15,6 +18,7 @@ const HgOurProviders =  React.createClass({
     providerCount:PropTypes.number,
     getProviderUrl:PropTypes.string, // This is the url to make an api call to get providers for specific practice. 
     providerArr: PropTypes.array.isRequired, // array of providers,
+    practiceId:PropTypes.string
   },
 
    getInitialState: function(){
@@ -36,21 +40,18 @@ const HgOurProviders =  React.createClass({
         return <span>There are {this.props.providerCount} providers currently practicing at this location.</span>
       }
   },
-    pageChange: function(pageNumber){
+  
+  pageChange: function(pageNumber){
     var skip = (pageNumber-1)*10;
     var take = 10;
     var url = "&skip="+skip+"&take="+take;
-      _fetch(this.props.getProviderUrl + url,{method:'GET'},function(status, response){
-        if (status =='OK')
-        {
-          this.setState({displayList: response.providerArr});
-        }
-      }.bind(this))
+    const { getProvidersByPracticeId} = this.props;
+      getProvidersByPracticeId(this.props.practiceId,skip,take);
   },
 
   renderProviders () {
     let providers = [];
-    this.state.displayList.map((provider) => {
+    this.props.providerArr.map((provider) => {
       providers.push(
         <div>
         <div className="provider-wrap" key={provider.pwid}>
@@ -85,4 +86,16 @@ const HgOurProviders =  React.createClass({
     return null;
   }
 });
-export default HgOurProviders;
+const mapStateToProps = (state) => {
+  if (state.providers){
+  return {
+         providerArr: state.providers.providerArr,
+    }
+  }
+};
+const mapDispatchToProps = (dispatch) => {
+  return {
+    getProvidersByPracticeId: () => dispatch(getProvidersByPracticeId()),
+  };
+};
+export default connect(mapStateToProps, actions)(HgOurProviders);
