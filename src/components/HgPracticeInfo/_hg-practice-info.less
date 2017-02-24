@@ -1,0 +1,182 @@
+﻿    // HG Practice links
+    // -------------------------------------
+    @import '~leaflet/dist/leaflet.css';
+    @import '~@hg/three-ui/_globalstyle/_hg-variables';
+    @import '~@hg/three-ui/_globalstyle/_hg-mixins';
+    .practice-info-wrapper {
+        padding: 0 20px;
+        //margin-top: 15px;
+    }
+    
+    .hg3-practice-information {
+        position: relative;
+        .clearfix();
+        width: 100%;
+        background: #fff;
+        header {
+            margin: 0;
+            padding-top: 20px;
+            .hg3-practice-name {
+                margin-bottom: 10px;
+                .practice-name {
+                    margin: 0;
+                    font-size: 32px;
+                    font-weight: @font-weight-light;
+                    text-align: center;
+                }
+            }
+            &.desktop {
+                min-width: 600px;
+                .practice-body {
+                    display: flex;
+                }
+                .hg3-map-container,
+                .hg3-office-info {
+                    flex: 1;
+                }
+                .hg3-office-info {
+                    padding-top: 30px;
+                }
+            }
+        }
+
+        .leaflet-control, .leaflet-container {
+            //pointer-events: none;
+        }
+    }
+    
+    .hg3-office-info {
+        padding-bottom: 20px;
+        ul {
+            margin: 0 10px;
+            padding-left: 45px;
+            list-style: none;
+            font-size: 14px;
+            line-height: 1.5;
+            color: @gray-darker;
+            > li {
+                position: relative;
+                margin-bottom: 5px;
+                .hg3-i:first-child {
+                    position: absolute;
+                    left: -30px;
+                    display: block;
+                    .square(20px);
+                    line-height: 1.5;
+                    text-align: center;
+                    color: lighten(@gray-dark, 10%);
+                }
+                [class*="hg3-i-chevron-"] {
+                    font-size: 10px;
+                }
+                .hg3-i:first-child.hg3-i-check {
+                    color: #71daa4;
+                }
+                .hg3-i:first-child.hg3-i-close {
+                    color: @red;
+                }
+            }
+        }
+    }
+    
+    .office-container {
+        h2 {
+            font-size: 28px;
+            margin-top: 20px;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 0;
+            li {
+                margin-bottom: 20px;
+                font-size: 19px;
+            }
+            .hg3-i {
+                color: @gray;
+                width: 35px;
+                display: inline-block;
+                vertical-align: middle;
+                font-size: 21px;
+            }
+            .hg3-i-chevron-down,
+            .hg3-i-chevron-right {
+                color: @blue;
+                font-size: 16px;
+            }
+            .hg3-i-map-marker {
+                vertical-align: top;
+            }
+        }
+        #map-container {
+            margin-top: 5px;
+        }
+        .section-title {
+            display: inline;
+            padding: 0;
+            background: transparent !important;
+            .hg-coin {
+                margin-left: 0;
+                margin-right: 0;
+                display: table-cell;
+            }
+            .title-text,
+            .arrow {
+                display: table-cell;
+            }
+            .arrow {
+                color: @blue;
+            }
+        }
+        .col-sm-6 {
+            padding-right: 0;
+            padding-left: 0;
+        }
+        .office-info {
+            padding-right: 15px;
+            padding-left: 15px;
+        }
+        .other-locations {
+            padding-top: 10px;
+            h2 {
+                padding-left: 15px;
+            }
+            .arrow {
+                padding-right: 15px;
+            }
+        }
+        .practice-link {
+            border-top: 0;
+        }
+    }
+
+    .leaflet-control, .leaflet-container {
+        //pointer-events: none;
+    }
+    
+    @media (min-width: @screen-sm-min) {
+        .office-container {}
+    }
+    
+    @media (max-width: @screen-xs-max) {
+        .office-container {
+            .other-locations {
+                border-top: 1px solid @gray;
+                .title-text {
+                    padding-top: 0 !important;
+                }
+            }
+        }
+    }
+    
+    .practice-body {
+        box-shadow: 0 2px 5px 0 #a5c7d3;
+    }
+    
+    @media (max-width: 695px) and (min-width: 320px) {
+        .practice-info-wrapper {
+            padding: 0 20px;
+        }
+    }
+
+

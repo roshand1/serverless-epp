@@ -1,0 +1,166 @@
+// HG Practice links
+@import '~@hg/three-ui/_globalstyle/_hg-variables';
+@import '~@hg/three-ui/_globalstyle/_hg-mixins';
+.practice-link {
+    float: left;
+    .section-title {
+        margin: 0;
+        padding: 20px;
+        color: white;
+        &.title-color-blue {
+            background: @blue;
+        }
+        &.title-color-teal {
+            background: @teal;
+        }
+        &.title-color-green {
+            background: @green;
+        }
+        &.title-color-seafoam {
+            background: @seafoam;
+        }
+        &.title-color-gray {
+            background: @green-gray;
+        }
+        &.title-color-white {
+            background: white;
+            .hg-coin {
+                background-color: #dadada !important;
+                color: #dadada;
+                line-height: 47px;
+                .hg3-i {
+                    color: @blue;
+                }
+            }
+            .title-text {
+                color: #333;
+                padding-top: 17px;
+            }
+        }
+        .title-text {
+            padding: 8px 0 0 58px;
+            display: inline-block;
+            font-size: 18px;
+            font-weight: bold;
+            vertical-align: top;
+            color: white;
+            text-align: left;
+        }
+    }
+}
+
+@media (min-width: @screen-sm-min) {
+    .practice-link {
+        .focus-word {
+            display: block;
+            font-weight: bold;
+            letter-spacing: .04em;
+        }
+        .main-message {
+            font-size: 14px;
+        }
+        .title-text {
+            padding: 12px 0 0 10px;
+        }
+    }
+    .practice-links {
+        .practice-link:first-child h2 {
+            border-radius: 8px 0 0 8px;
+        }
+        .practice-link:last-child h2 {
+            border-radius: 0 8px 8px 0;
+        }
+    }
+    .practice-link+.practice-link {
+        border-left: 1px solid white;
+    }
+    a {
+        position: relative;
+        .hg-coin {
+            position: absolute;
+            top: 50%;
+            margin-top: -24px;
+        }
+    }
+    .practice-links {
+        padding: 15px 20px;
+    }
+    .practice-link+.practice-link {
+        border-left: 1px solid white;
+    }
+    #component-hgPracticeLinks {
+        display: flex;
+    }
+    #component-hgPracticeLinks > div {
+        flex-grow: 1;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 960px) {
+    .practice-link {
+        .hg-coin {
+            position: static !important;
+            display: block;
+            margin: 0 auto 5px !important;
+        }
+        .section-title {
+            test-align: center;
+            padding: 10px;
+            .title-text {
+                padding: 0;
+                display: block;
+                text-align: center;
+            }
+        }
+    }
+
+    a {
+        width: 100%;
+    }
+    .practice-link+.practice-link {
+        border-left: 1px solid white;
+    }
+    #component-hgPracticeLinks {
+        display: flex;
+    }
+    #component-hgPracticeLinks > div {
+        flex-grow: 1;
+    }
+}
+
+@media (max-width: 599px) {
+    .practice-links {
+        margin-top: 20px;
+    }
+    .practice-link {
+        width: 100%;
+        .hg-coin {
+            border: 0;
+            position: absolute;
+            top: 50%;
+            margin-top: -24px;
+        }
+        .section-title {
+            font-size: 0;
+            line-height: .5;
+            .title-text {
+                font-size: 14px;
+                padding: 0 0 0 60px;
+                font-weight: normal;
+                line-height: 1;
+            }
+        }
+    }
+
+    a {
+        position: relative;
+        .hg-coin {
+            position: absolute;
+            top: 50%;
+            margin-top: -24px;
+        }
+    }
+    .practice-link+.practice-link {
+        border-top: 1px solid white;
+    }
+}

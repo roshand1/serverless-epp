@@ -1,0 +1,77 @@
+@import '~@hg/three-ui/_globalstyle/_globalstyle';
+@import '~@hg/three-ui/_globalstyle/_hg-variables';
+@import '~@hg/three-ui/_globalstyle/_hg-mixins';
+#component-hgSectionTitle {
+    clear: both;
+}
+
+.practice-links {
+    max-width: 1366px;
+    margin: 0 auto;
+}
+
+.practice-link {
+    width: 100%;
+}
+
+.practice-body {
+    display: flex;
+    .hg3-map-container,
+    .hg3-office-info {
+        flex: 1
+    }
+    .hg3-office-info {
+        padding-top: 30px;
+    }
+}
+
+#component-hgLogo {
+    text-align: center;
+    background-color: #fff;
+}
+
+.logoAdds {
+    margin-top: 152px;
+}
+
+.logoNoAdds {
+    margin-top: 59px;
+}
+
+.practice-name {
+    text-align: center;
+    background-color: white;
+    padding-top: 20px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #ccc;
+}
+
+
+
+@media (min-width: @screen-sm-min) {
+    .practice-info-wrapper {
+        display: table;
+        table-layout: fixed;
+        margin: 0 auto;
+        width: 100%;
+        max-width: 1366px;
+    }
+    #component-hgOfficeInfo {
+        display: table-cell;
+        width: 100%;
+    }
+    .epp-middle-ad {
+        display: table-cell;
+        width: 300px;
+        vertical-align: top;
+        padding: 5px 0 0 10px;
+    }
+
+}
+
+@media (max-width: @screen-xs-max) {
+    .epp-middle-ad {
+        text-align: center;
+        margin: 15px auto;
+    }
+}

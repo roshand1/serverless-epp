@@ -70,7 +70,8 @@ var localConfig = {
 
       // These loaders are used to import Markdown, used in styleguides
       {test: /\.md$/, loader: 'raw'},
-      {test: /\.json$/, loader: 'json'}
+      {test: /\.json$/, loader: 'json'},
+      { test: /\.(png|jpg)$/, loader: 'url-loader?mimetype=image/[name]' }
     ]
   },
   plugins: [new webpack.HotModuleReplacementPlugin(), envPlugin],
