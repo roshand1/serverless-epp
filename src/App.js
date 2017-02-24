@@ -6,7 +6,6 @@ import { connect } from 'react-redux';
 import {getProvidersByFunc} from '../redux/action';
 import * as actions from '../redux/action';
 
-// React Components
 import HgHero from './components/HgHero/HgHero.jsx' 
 import HgPracticeInfo from './components/HgPracticeInfo/HgPracticeInfo.jsx' 
 import HgPracticeLinks from './components/HgPracticeLinks/HgPracticeLinks.jsx'  
@@ -14,6 +13,8 @@ import HgOurProviders from './components/HgOurProviders/HgOurProviders.jsx'
 import HgOfficeLocation from './components/HgOfficeLocation/HgOfficeLocation.jsx'
 // import OfficeHours from './OfficeHours/OfficeHours.jsx'
 // import LeafLet from './components/HgLeaflet/HgLeaflet.jsx'
+
+import HgFooter from '@hg/syndicated-ui/src/components/HgFooter/HgFooter';
 
 const App = React.createClass({
 
@@ -29,7 +30,7 @@ componentDidMount(){
     render(){
       debugger;
         let viewPracModel =this.props.practiceModel? this.props.practiceModel.practiceModel:'';
-        let officeModel ={officeLocations:viewPracModel.OfficeLocations}
+        let officeModel ={officeLocations:viewPracModel.OfficeLocations};
 
         return <div>{viewPracModel &&
                       <div id="content-section">
@@ -101,6 +102,9 @@ componentDidMount(){
                             </div>
                             <div id="component-location">
                                 <HgOfficeLocation isiPad={false} isMobile={false} visiting={officeModel}/>
+                            </div>
+                            <div id="component-footer">
+                                <HgFooter footer={viewPracModel.FooterModel.footer}/>
                             </div>
                       </div>
                     }
