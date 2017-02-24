@@ -16,7 +16,7 @@ const uri = '?practiceId=' + practiceId +'&skip='+skip+'&take='+take;
 
 export function getPracticeModel(){
     return function(dispatch){
-        fetch('https://www.healthgrades.com/uisvc/v1_0/eppuiservice/api/Provider/GetViewModel?officeId=oo65fmp')
+        fetch('https://www.healthgrades.com/uisvc/v1_0/eppuiservice/api/Provider/GetViewModel?officeId=oo65fmp') //YBRWWS
           .then((response)=> response.json())
           .then((response) =>{
               debugger;

@@ -1,5 +1,6 @@
-import './_hg-eppRightRailWorking.less';
+import './_hg-eppRightRail.less';
 import './App.less'
+import './templateStyle.scss'
 import React, { PropTypes } from 'react'
 import ReactDOM from 'react-dom'
 import { connect } from 'react-redux';
@@ -28,12 +29,13 @@ componentDidMount(){
         let officeModel ={officeLocations:viewPracModel.OfficeLocations};
 
         return <div>{viewPracModel &&
+            <div className="body-content container">
                       <div id="content-section">
                         <div id="component-hgHero">
                             <HgHero practiceName={viewPracModel.LogoWithVideo.practiceName }
                                   heroImage={viewPracModel.LogoWithVideo.heroImage} />
                         </div>
-                         <div className="practice-info-wrapper">
+                         <div className="practice-info-wrapper componentWrap">
                             <div id="component-hgOfficeInfo">
                                 <HgPracticeInfo
                                 acceptsNewPatients={viewPracModel.PracticeInfo.acceptsNewPatients}
@@ -48,42 +50,6 @@ componentDidMount(){
                                 moreInfoLink={viewPracModel.PracticeInfo.moreInfoLink} />
                             </div>
                           </div>
-                          <div className="practice-links clearfix">
-                            <div id="component-hgPracticeLinks">
-                                {viewPracModel.ShowAboutUs && 
-                                    <HgPracticeLinks coinOpts={viewPracModel.AboutUsLinkModel.coinOpts}
-                                    href={viewPracModel.AboutUsLinkModel.href}
-                                    icon={viewPracModel.AboutUsLinkModel.icon}
-                                    isPremium={viewPracModel.AboutUsLinkModel.isPremium}
-                                    titleColor={viewPracModel.AboutUsLinkModel.titleColor}
-                                    titleText={viewPracModel.AboutUsLinkModel.titleText}/>
-                                }
-                                {viewPracModel.ShowServices && 
-                                    <HgPracticeLinks coinOpts={viewPracModel.ServicesLinkModel.coinOpts}
-                                    href={viewPracModel.ServicesLinkModel.href}
-                                    icon={viewPracModel.ServicesLinkModel.icon}
-                                    isPremium={viewPracModel.ServicesLinkModel.isPremium}
-                                    titleColor={viewPracModel.ServicesLinkModel.titleColor}
-                                    titleText={viewPracModel.ServicesLinkModel.titleText}/>
-                                }
-                                {viewPracModel.ShowProviders && 
-                                    <HgPracticeLinks coinOpts={viewPracModel.ProvidersLinkModel.coinOpts}
-                                    href={viewPracModel.ProvidersLinkModel.href}
-                                    icon={viewPracModel.ProvidersLinkModel.icon}
-                                    isPremium={viewPracModel.ProvidersLinkModel.isPremium}
-                                    titleColor={viewPracModel.ProvidersLinkModel.titleColor}
-                                    titleText={viewPracModel.ProvidersLinkModel.titleText}/>
-                                }
-                                {viewPracModel.ShowPractices && 
-                                    <HgPracticeLinks coinOpts={viewPracModel.PracticesLinkModel.coinOpts}
-                                    href={viewPracModel.PracticesLinkModel.href}
-                                    icon={viewPracModel.PracticesLinkModel.icon}
-                                    isPremium={viewPracModel.PracticesLinkModel.isPremium}
-                                    titleColor={viewPracModel.PracticesLinkModel.titleColor}
-                                    titleText={viewPracModel.PracticesLinkModel.titleText}/>
-                                }
-                            </div>
-                          </div>
 
                             <div>
                                 <div id="component-hgProviders" className="componentWrap">
@@ -96,13 +62,31 @@ componentDidMount(){
                                     <br className="clearBoth"/>
                                 </div>
                             </div>
-                            <div id="component-location">
+                            <div id="component-practices" className="componentWrap">
                                 <HgOfficeLocation isiPad={false} isMobile={false} visiting={officeModel}/>
                             </div>
+
+                              
+                            {!viewPracModel.UpOneLevel &&  
+                            <div id="breadcrumb">                              
+                                <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb" class="breadcrumbLink">
+                                    <a href={viewPracModel.UpOneLevel} 
+                                        title={viewPracModel.OfficeCity} 
+                                        data-hgoname="breadcrumb-navigation-link" 
+                                        itemprop="url">
+                                            <span itemprop="title">See more group practices in {viewPracModel.OfficeCity}.</span>
+                                    </a>
+                                </span>
+                            </div>
+                            }   
+                          
+
+
                             <div id="component-footer">
                                 <HgFooter footer={viewPracModel.FooterModel.footer}/>
                             </div>
                       </div>
+                    </div>
                     }
                 </div>
     }
