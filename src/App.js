@@ -19,7 +19,6 @@ componentDidMount(){
 },
 
     render(){
-      debugger;
         return <div> This is definitely a React app now!! after reloding
                     <div>{this.props.providers &&
                      <Providers isMobile={false} providerCount={this.props.providers.providers.providerCount} getProviderUrl={'something'} providerArr={this.props.providers.providers.providerArr}/>
