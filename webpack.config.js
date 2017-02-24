@@ -11,15 +11,14 @@ var envPlugin = new webpack.DefinePlugin({
 });
 
 var localConfig = {
-  entry: {
-    app: './src/app.es',
-    tests: './src/tests.es'
-  },
+  entry: [
+    'webpack-hot-middleware/client',
+     './app/client.js'
+  ],
   output: {
-    pathinfo: true,
-    filename: '[name].js',
-    path: path.join(__dirname, 'app/assets'),
-    publicPath: 'http://localhost:8080/assets' // Required for webpack-dev-server
+    path: require("path").resolve("./dist"), 
+    filename: 'bundle.js',
+    publicPath: '/'
   },
   resolve: {
     root: [
@@ -40,7 +39,7 @@ var localConfig = {
     loaders: [
 
       { 
-        test: /\.(jsx|es)$/, 
+        test: /\.(js|jsx|es)$/, 
         loader: 'babel', 
         exclude: /node_modules/,
         query: {

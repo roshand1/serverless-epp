@@ -11,6 +11,14 @@
     "@hg/hg-common-toolz": "git+https://git.healthgrades.com/blue-falcon/hg-common-toolz.git#release",
     "@hg/styleguide-kit": "git+https://git.healthgrades.com/blue-falcon/styleguide-kit.git#release",
     "@hg/three-ui": "git+https://git.healthgrades.com/blue-falcon/three-ui.git#v1.7.19",
+    "@healthgrades/hg-uconnect": "git+https://git.healthgrades.com/blue-falcon/hg-uconnect.git#v1.0.3",
+    "@hg/hg-provider-components": "git+https://git.healthgrades.com/blue-falcon/hg-provider-components.git#v1.1.9",
+    "@hg/pdc-ui": "git+https://git.healthgrades.com/blue-falcon/pdc-ui.git#v0.0.6",
+    "@hg/search-ui": "git+https://git.healthgrades.com/blue-falcon/search-ui.git#v1.10.0",
+    "@hg/syndicated-ui": "git+https://git.healthgrades.com/blue-falcon/syndicated-ui.git#v1.6.7",
+    "@healthgrades/u2-components": "git+https://git.healthgrades.com/blue-falcon/u2-components.git#v1.1.2",
+    "@hg/profile-ui": "git+https://git.healthgrades.com/blue-falcon/profile-ui.git#v1.5.37",
+    "@hg/content-ui": "git+https://git.healthgrades.com/blue-falcon/content-ui.git#v1.0.0",
     "babel-core": "^6.14.0",
     "babel-loader": "^6.2.5",
     "babel-plugin-transform-object-rest-spread": "^6.8.0",
@@ -21,6 +29,7 @@
     "babel-preset-es2017": "^6.14.0",
     "babel-preset-react": "^6.11.1",
     "babel-runtime": "^6.11.6",
+    "babel-preset-react-hmre": "^1.1.0",
     "classnames": "^2.1.3",
     "css-loader": "^0.23.1",
     "install": "^0.4.1",
@@ -50,6 +59,11 @@
     "url-loader": "^0.5.7",
     "webpack": "^1.12.9",
     "webpack-dev-server": "~1.15",
-    "react-bootstrap": "^0.30.3"
+    "react-bootstrap": "^0.30.3",
+    "webpack-dev-middleware": "^1.10.1",
+    "webpack-hot-middleware": "^2.17.0"
+  },
+  "dependencies": {
+    "babel-preset-react-hmre": "^1.1.1"
   }
 }
