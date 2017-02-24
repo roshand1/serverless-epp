@@ -9,6 +9,10 @@ let reducer = function(state, action) {
       return Object.assign({}, state, {
         providers: action.payload.providerArr
       });
+        case 'FETCH_PRAC_MODE_SUCCESS':
+      return Object.assign({}, state, {
+        practiceModel: action.payload
+      });
     default: 
       return state;
   }

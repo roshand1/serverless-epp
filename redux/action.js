@@ -35,6 +35,20 @@ export function getProvidersByFunc(){
     }
 }
 
+export function getPracticeModel(){
+    return function(dispatch){
+        fetch('https://www.healthgrades.com/uisvc/v1_0/eppuiservice/api/Provider/GetViewModel?officeId=YBRWWS')
+          .then((response)=> response.json())
+          .then((response) =>{
+              debugger;
+              dispatch({type:'FETCH_PRAC_MODE_SUCCESS',payload:response});
+          })
+          .catch((error)=>{
+              return dispatch({type:'FETCH_PRAC_MODE_ERROR',payload:error});
+          });
+    }
+}
+
 export function provideStaticData(){
     return{
         type:'GET_STATICDATA',
