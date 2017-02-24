@@ -28,9 +28,14 @@ componentDidMount(){
     render(){
       debugger;
         let viewPracModel =this.props.practiceModel? this.props.practiceModel.practiceModel:'';
-        let officeModel ={officeLocations:viewPracModel.OfficeLocations}
+        let officeModel ={officeLocations:viewPracModel.OfficeLocations};
+          const leftDiv = {
+      width: '10%'
+    };
 
         return <div>{viewPracModel &&
+                    <div id="parent-div">
+                      <div style={leftDiv}></div>
                       <div id="content-section">
                         <div id="component-hgHero">
                             <HgHero practiceName={viewPracModel.LogoWithVideo.practiceName }
@@ -102,6 +107,7 @@ componentDidMount(){
                                 <HgOfficeLocation isiPad={false} isMobile={false} visiting={officeModel}/>
                             </div>
                       </div>
+                    </div>
                     }
                 </div>
     }
