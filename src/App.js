@@ -12,6 +12,7 @@ import HgPracticeInfo from './components/HgPracticeInfo/HgPracticeInfo.jsx'
 import HgPracticeLinks from './components/HgPracticeLinks/HgPracticeLinks.jsx'  
 import HgOurProviders from './components/HgOurProviders/HgOurProviders.jsx'
 import HgOfficeLocation from './components/HgOfficeLocation/HgOfficeLocation.jsx'
+import HgContentAndAd from './components/HgContentAdCards/ContentAndAd';
 // import OfficeHours from './OfficeHours/OfficeHours.jsx'
 // import LeafLet from './components/HgLeaflet/HgLeaflet.jsx'
 
@@ -65,6 +66,9 @@ componentDidMount(){
                             <div id="component-practices" className="componentWrap">
                                 <HgOfficeLocation isiPad={false} isMobile={false} visiting={officeModel}/>
                             </div>
+                            {viewPracModel.ShowContentAdds && !viewPracModel.PageOptions.NoContentCards ?
+                                <div id="component-hgAddContent-bottom"><HgContentAndAd {...viewPracModel.ContentCards}/></div> : <div id="component-hgAddContent"><HgContentAndAd {...viewPracModel.ContentCards}/></div>
+                            }
 
                               
                             {!viewPracModel.UpOneLevel &&  
