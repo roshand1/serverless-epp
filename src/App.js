@@ -33,6 +33,8 @@ componentDidMount(){
         return <div>{viewPracModel &&
             <div className="body-content container">
                       <div id="content-section">
+                      <div className="content-left">
+                      
                         <div id="component-hgHero">
                             <HgHero practiceName={viewPracModel.LogoWithVideo.practiceName }
                                   heroImage={viewPracModel.LogoWithVideo.heroImage} />
@@ -84,7 +86,8 @@ componentDidMount(){
                                 </span>
                             </div>
                             }   
-                          
+                            
+                      </div>
 
 
                             <div id="component-footer">
