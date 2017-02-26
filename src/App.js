@@ -1,5 +1,6 @@
 import './_hg-eppRightRail.less';
 import './App.less'
+import './index.less'
 import './templateStyle.scss'
 import React, { PropTypes } from 'react'
 import ReactDOM from 'react-dom'
