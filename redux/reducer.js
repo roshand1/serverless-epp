@@ -10,6 +10,10 @@ let reducer = function(state, action) {
       return Object.assign({}, state, {
         practiceModel: action.payload
       });
+         case 'FETCH_TESTIMONIAL_MODEL_SUCCESS':
+      return Object.assign({}, state, {
+        testimonialModel: action.payload
+      });
     default: 
       return state;
   }

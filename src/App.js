@@ -13,6 +13,7 @@ import HgPracticeInfo from './components/HgPracticeInfo/HgPracticeInfo.jsx'
 import HgPracticeLinks from './components/HgPracticeLinks/HgPracticeLinks.jsx'  
 import HgOurProviders from './components/HgOurProviders/HgOurProviders.jsx'
 import HgOfficeLocation from './components/HgOfficeLocation/HgOfficeLocation.jsx'
+import HgTestimonial from './components/HgTestimonial/Testimonial.jsx'
 import HgContentAndAd from './components/HgContentAdCards/ContentAndAd';
 // import OfficeHours from './OfficeHours/OfficeHours.jsx'
 // import LeafLet from './components/HgLeaflet/HgLeaflet.jsx'
@@ -27,8 +28,9 @@ componentDidMount(){
 },
     render(){
       debugger;
-        let viewPracModel =this.props.practiceModel? this.props.practiceModel.practiceModel:'';
-        let officeModel ={officeLocations:viewPracModel.OfficeLocations};
+        let viewPracModel =this.props.store? this.props.store.practiceModel:'';
+        let officeModel =viewPracModel?{officeLocations:viewPracModel.OfficeLocations}:'';
+        let testimoniesModel = this.props.store? this.props.store.testimonialModel.Testimonies:'';
 
         return <div>{viewPracModel &&
             <div className="body-content container">
@@ -54,6 +56,11 @@ componentDidMount(){
                                 moreInfoLink={viewPracModel.PracticeInfo.moreInfoLink} />
                             </div>
                           </div>
+                          {testimoniesModel.length >0 &&
+                           <div id="component-testimonies" class="componentWrap">
+                                <HgTestimonial testimonies={testimoniesModel}/>
+                           </div>
+                          }
 
                             <div>
                                 <div id="component-hgProviders" className="componentWrap">
@@ -86,7 +93,7 @@ componentDidMount(){
                                 </span>
                             </div>
                             }   
-                            
+
                       </div>
 
 
@@ -103,7 +110,7 @@ componentDidMount(){
 const mapStateToProps = (state) => {
   return {
     
-         practiceModel: state,
+         store: state,
     }
 };
 const mapDispatchToProps = (dispatch) => {
