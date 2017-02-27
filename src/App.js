@@ -15,6 +15,7 @@ import HgOurProviders from './components/HgOurProviders/HgOurProviders.jsx'
 import HgOfficeLocation from './components/HgOfficeLocation/HgOfficeLocation.jsx'
 import HgTestimonial from './components/HgTestimonial/Testimonial.jsx'
 import HgContentAndAd from './components/HgContentAdCards/ContentAndAd';
+//import HgInlineAds from './components/HgContentAdCards/HgInlineAds/HgInlineAds.jsx';
 // import OfficeHours from './OfficeHours/OfficeHours.jsx'
 // import LeafLet from './components/HgLeaflet/HgLeaflet.jsx'
 
@@ -35,6 +36,10 @@ componentDidMount(){
         return <div>{viewPracModel &&
             <div className="body-content container">
                       <div id="content-section">
+                       <div id="inlineAds">
+                      
+                       </div>
+
                       <div className="content-left">
                       
                         <div id="component-hgHero">
@@ -77,9 +82,8 @@ componentDidMount(){
                                 <HgOfficeLocation isiPad={false} isMobile={false} visiting={officeModel}/>
                             </div>
                             {viewPracModel.ShowContentAdds && !viewPracModel.PageOptions.NoContentCards ?
-                                <div id="component-hgAddContent-bottom"><HgContentAndAd {...viewPracModel.ContentCards}/></div> : <div id="component-hgAddContent"><HgContentAndAd {...viewPracModel.ContentCards}/></div>
+                                <div id="component-hgAddContent-bottom"  class="content-and-ad"><HgContentAndAd {...viewPracModel.ContentCards}/></div> : <div id="component-hgAddContent"  class="content-and-ad"><HgContentAndAd {...viewPracModel.ContentCards}/></div>
                             }
-
                               
                             {!viewPracModel.UpOneLevel &&  
                             <div id="breadcrumb">                              

@@ -1,0 +1,44 @@
+ <script class="kxct" data-id="q08k81wph" data-timing="async" data-version="2.0" type="text/javascript">
+                window.Krux || ((Krux = function () { Krux.q.push(arguments) }).q = []);
+                (function () {
+                    var k = document.createElement('script'); k.type = 'text/javascript'; k.async = true;
+                    var m, src = (m = location.href.match(/\bkxsrc=([^&]+)/)) && decodeURIComponent(m[1]);
+                    k.src = /^https?:\/\/([a-z0-9_\-\.]+\.)?krxd\.net(:\d{1,5})?\/controltag\//i.test(src) ? src : src === "disable" ? "" :
+                      (location.protocol === "https:" ? "https:" : "http:") + "//cdn.krxd.net/controltag?confid=q08k81wph";
+                    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(k, s);
+                }());
+            </script>
+            
+            <script class="kxint" type="text/javascript">
+                window.Krux || ((Krux = function () { Krux.q.push(arguments); }).q = []);
+                (function () {
+                    function retrieve(n) {
+                        var m, k = 'kxhealthgrades_' + n, ls = (function () {
+                            try {
+                                return window.localStorage;
+                            } catch (e) {
+                                return null;
+                            }
+                        })();
+                        if (ls) {
+                            return ls[k] || "";
+                        } else if (navigator.cookieEnabled) {
+                            m = document.cookie.match(k + '=([^;]*)');
+                            return (m && unescape(m[1])) || "";
+                        } else {
+                            return '';
+                        }
+                    }
+                    Krux.user = retrieve('user');
+                    Krux.segments = retrieve('segs') ? retrieve('segs').split(',') : [];
+                })();
+            </script>
+            <script>
+                //set KRUX ad targets
+                (function () {
+                    if (typeof (HG3) !== 'undefined' && typeof (HG3.ads) !== 'undefined') {
+                        HG3.ads.targets.push({ key: 'kuid', value: [Krux.user] });
+                        if (Krux.segments.length > 0) HG3.ads.targets.push({ key: 'ksg', value: [Krux.segments] });
+                    }
+                })();
+            </script>

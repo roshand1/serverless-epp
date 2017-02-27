@@ -17,7 +17,7 @@ const uri = '?practiceId=' + practiceId +'&skip='+skip+'&take='+take;
 
 export function getPracticeModel(){
     return function(dispatch){
-        fetch('https://www.healthgrades.com/uisvc/v1_0/eppuiservice/api/Provider/GetViewModel?officeId=YBRWWS') //YBRWWS , oo65fmp
+        fetch('https://www.healthgrades.com/uisvc/v1_0/eppuiservice/api/Provider/GetViewModel?officeId=oo65fmp') //YBRWWS , oo65fmp
           .then((response)=> response.json())
           .then((response) =>{
               debugger;
@@ -26,6 +26,9 @@ export function getPracticeModel(){
                    debugger;
               dispatch({type:'FETCH_TESTIMONIAL_MODEL_SUCCESS',payload:testimonies});
               dispatch({type:'FETCH_PRAC_MODEL_SUCCESS',payload:response});
+
+               var event = new CustomEvent('displayAds', { 'detail': {AdModel:response.Adds} });
+               document.dispatchEvent(event);
             }
             else{
                  debugger;

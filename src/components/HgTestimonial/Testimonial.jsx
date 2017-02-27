@@ -11,7 +11,6 @@ const Testimonial = React.createClass({
   },
 
  renderTestimonial () {
-   debugger; 
    let renderTestimonies = [];
                   this.props.testimonies.map((testimony,index)=>{
                renderTestimonies.push(<div key={index}>
