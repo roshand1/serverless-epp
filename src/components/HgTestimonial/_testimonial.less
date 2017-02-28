@@ -1,0 +1,59 @@
+@import '~@hg/three-ui/_globalstyle/_hg-variables';
+@import '~@hg/three-ui/_globalstyle/_hg-mixins';
+
+.hg3-testimonial {
+  width: 100%;
+  line-height: 1.4;
+
+  .hg3-testimonial-content {
+    width: 100%;
+    max-width: 1366px;
+    margin: 0 auto;
+    padding-left: 30px;
+    padding-top:10px;
+    padding-bottom:10px;
+    line-height: 1.4;
+    background: #fff;
+    border-bottom:1px solid #ccc;
+
+    h3 {
+      font-size: 24px;
+    }
+
+    .read-more .hg3-i  {
+      font-size: 10px;
+    }
+  }
+
+  a,
+  p {
+    display: inline;
+  }
+
+  .posterName{
+    display:block;
+    font-weight:bold; 
+  }
+
+  .full-quote:before, .truncated-quote:before {
+      content: "\f10d";
+      margin-right: 7px;
+  }
+
+  .full-quote:after {
+      content: "\f10e";
+      margin-left: 7px;
+  }
+
+  .quote{
+      margin-bottom:20px;
+
+      &:before,
+      &:after {
+      font-family: hg3-icons-atf, hg3-icons;
+      display: inline-block;
+      color: #649aa6;
+      position: relative;
+    }
+  }
+}

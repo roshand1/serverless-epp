@@ -4,7 +4,7 @@
   "description": "A template for quickly creating a new Healthgrades UI module.",
   "private": true,
   "scripts": {
-    "start": "webpack-dev-server --port 8080 --content-base app/ --inline --display-reasons --display-error-details"
+    "start": "webpack-dev-server --port 6060 --content-base app/ --inline --display-reasons --display-error-details"
   },
   "author": "healthgrades",
   "devDependencies": {

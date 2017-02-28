@@ -12,7 +12,6 @@ var envPlugin = new webpack.DefinePlugin({
 
 var localConfig = {
   entry: [
-    'webpack-hot-middleware/client',
      './app/client.js'
   ],
   output: {
@@ -20,6 +19,8 @@ var localConfig = {
     filename: 'bundle.js',
     publicPath: '/'
   },
+  debug:true,
+  devtool:"#eval-source-map",
   resolve: {
     root: [
       __dirname,
@@ -44,7 +45,7 @@ var localConfig = {
         exclude: /node_modules/,
         query: {
           plugins: ['transform-runtime', 'transform-object-rest-spread'],
-          presets: ['react', 'es2015', 'es2016', 'es2017']
+          presets: ['react', 'es2015', 'es2016', 'es2017','react-hmre']
         }
       },
 
@@ -54,7 +55,7 @@ var localConfig = {
         include: /node_modules[\/\\]\@hg[\/\\]/ ,
         query: {
           plugins: ['transform-runtime', 'transform-object-rest-spread'],
-          presets: ['react', 'es2015', 'es2016', 'es2017']
+          presets: ['react', 'es2015', 'es2016', 'es2017','react-hmre']
         }
       },
       { test: /\.less$/, loader: 'style!css!less'},
@@ -78,7 +79,7 @@ var localConfig = {
   devServer: {
     proxy: {
       '/**/': {
-        target: 'http://localhost:8080/index.html',
+        target: 'http://localhost:6060/index.html',
         ignorePath: true,
         bypass: function(req, res, proxyOptions) {
           if(req.path.match(/\./)) {

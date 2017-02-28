@@ -1,5 +1,6 @@
 import './_hg-eppRightRail.less';
 import './App.less'
+import './index.less'
 import './templateStyle.scss'
 import React, { PropTypes } from 'react'
 import ReactDOM from 'react-dom'
@@ -12,6 +13,9 @@ import HgPracticeInfo from './components/HgPracticeInfo/HgPracticeInfo.jsx'
 import HgPracticeLinks from './components/HgPracticeLinks/HgPracticeLinks.jsx'  
 import HgOurProviders from './components/HgOurProviders/HgOurProviders.jsx'
 import HgOfficeLocation from './components/HgOfficeLocation/HgOfficeLocation.jsx'
+import HgTestimonial from './components/HgTestimonial/Testimonial.jsx'
+import HgContentAndAd from './components/HgContentAdCards/ContentAndAd';
+//import HgInlineAds from './components/HgContentAdCards/HgInlineAds/HgInlineAds.jsx';
 // import OfficeHours from './OfficeHours/OfficeHours.jsx'
 // import LeafLet from './components/HgLeaflet/HgLeaflet.jsx'
 
@@ -25,27 +29,24 @@ componentDidMount(){
 },
     render(){
       debugger;
-        let viewPracModel =this.props.practiceModel? this.props.practiceModel.practiceModel:'';
-        let officeModel ={officeLocations:viewPracModel.OfficeLocations};
-<<<<<<< HEAD
-          const leftDiv = {
-      width: '10%'
-    };
-=======
->>>>>>> dev
+        let viewPracModel =this.props.store? this.props.store.practiceModel:'';
+        let officeModel =viewPracModel?{officeLocations:viewPracModel.OfficeLocations}:'';
+        let testimoniesModel = this.props.store? this.props.store.testimonialModel.Testimonies:'';
 
         return <div>{viewPracModel &&
-<<<<<<< HEAD
-                    <div id="parent-div">
-                      <div style={leftDiv}></div>
-=======
             <div className="body-content container">
->>>>>>> dev
                       <div id="content-section">
+                       <div id="inlineAds">
+                      
+                       </div>
+
+                      <div className="content-left">
+                      
                         <div id="component-hgHero">
                             <HgHero practiceName={viewPracModel.LogoWithVideo.practiceName }
                                   heroImage={viewPracModel.LogoWithVideo.heroImage} />
                         </div>
+
                          <div className="practice-info-wrapper componentWrap">
                             <div id="component-hgOfficeInfo">
                                 <HgPracticeInfo
@@ -61,6 +62,16 @@ componentDidMount(){
                                 moreInfoLink={viewPracModel.PracticeInfo.moreInfoLink} />
                             </div>
                           </div>
+                          
+                            {viewPracModel.ShowContentAdds && !viewPracModel.PageOptions.NoContentCards ?
+                                <div id="component-hgAddContent"  class="content-and-ad"><HgContentAndAd {...viewPracModel.ContentCards}/></div> : <div id="component-hgAddContent"  class="content-and-ad"><HgContentAndAd {...viewPracModel.ContentCards}/></div>
+                            }
+
+                          {testimoniesModel.length >0 &&
+                           <div id="component-testimonies" class="componentWrap">
+                                <HgTestimonial testimonies={testimoniesModel}/>
+                           </div>
+                          }
 
                             <div>
                                 <div id="component-hgProviders" className="componentWrap">
@@ -76,7 +87,6 @@ componentDidMount(){
                             <div id="component-practices" className="componentWrap">
                                 <HgOfficeLocation isiPad={false} isMobile={false} visiting={officeModel}/>
                             </div>
-
                               
                             {!viewPracModel.UpOneLevel &&  
                             <div id="breadcrumb">                              
@@ -90,7 +100,8 @@ componentDidMount(){
                                 </span>
                             </div>
                             }   
-                          
+
+                      </div>
 
 
                             <div id="component-footer">
@@ -106,7 +117,7 @@ componentDidMount(){
 const mapStateToProps = (state) => {
   return {
     
-         practiceModel: state,
+         store: state,
     }
 };
 const mapDispatchToProps = (dispatch) => {
