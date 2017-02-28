@@ -46,6 +46,7 @@ componentDidMount(){
                             <HgHero practiceName={viewPracModel.LogoWithVideo.practiceName }
                                   heroImage={viewPracModel.LogoWithVideo.heroImage} />
                         </div>
+
                          <div className="practice-info-wrapper componentWrap">
                             <div id="component-hgOfficeInfo">
                                 <HgPracticeInfo
@@ -61,6 +62,11 @@ componentDidMount(){
                                 moreInfoLink={viewPracModel.PracticeInfo.moreInfoLink} />
                             </div>
                           </div>
+                          
+                            {viewPracModel.ShowContentAdds && !viewPracModel.PageOptions.NoContentCards ?
+                                <div id="component-hgAddContent"  class="content-and-ad"><HgContentAndAd {...viewPracModel.ContentCards}/></div> : <div id="component-hgAddContent"  class="content-and-ad"><HgContentAndAd {...viewPracModel.ContentCards}/></div>
+                            }
+
                           {testimoniesModel.length >0 &&
                            <div id="component-testimonies" class="componentWrap">
                                 <HgTestimonial testimonies={testimoniesModel}/>
@@ -81,9 +87,6 @@ componentDidMount(){
                             <div id="component-practices" className="componentWrap">
                                 <HgOfficeLocation isiPad={false} isMobile={false} visiting={officeModel}/>
                             </div>
-                            {viewPracModel.ShowContentAdds && !viewPracModel.PageOptions.NoContentCards ?
-                                <div id="component-hgAddContent-bottom"  class="content-and-ad"><HgContentAndAd {...viewPracModel.ContentCards}/></div> : <div id="component-hgAddContent"  class="content-and-ad"><HgContentAndAd {...viewPracModel.ContentCards}/></div>
-                            }
                               
                             {!viewPracModel.UpOneLevel &&  
                             <div id="breadcrumb">                              

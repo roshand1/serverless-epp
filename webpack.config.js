@@ -79,7 +79,7 @@ var localConfig = {
   devServer: {
     proxy: {
       '/**/': {
-        target: 'http://localhost:8080/index.html',
+        target: 'http://localhost:6060/index.html',
         ignorePath: true,
         bypass: function(req, res, proxyOptions) {
           if(req.path.match(/\./)) {
