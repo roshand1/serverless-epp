@@ -53,12 +53,9 @@ const HgOurProviders =  React.createClass({
     let providers = [];
     this.props.providerArr.map((provider) => {
       providers.push(
-        <div>
         <div className="provider-wrap" key={provider.pwid}>
           <HgMiniProviderCard {...provider} key={provider.pwid}/>
         </div>
-
-          </div>
       );
     });
     return providers;
@@ -83,14 +80,17 @@ const HgOurProviders =  React.createClass({
         </section>
       );
     }
-    return null;
+    return <div></div>;
   }
 });
 const mapStateToProps = (state) => {
   if (state.providers){
   return {
-         providerArr: state.providers.providerArr,
+         providerArr: state.getproviders.providerArr,
     }
+  }
+  else{
+    return {};
   }
 };
 const mapDispatchToProps = (dispatch) => {

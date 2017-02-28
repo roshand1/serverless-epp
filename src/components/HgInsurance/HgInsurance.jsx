@@ -16,7 +16,7 @@ const HgInsurance = React.createClass({
     practiceName: PropTypes.string,
     paginate: PropTypes.bool,
     insurancePerPage: PropTypes.number,
-    insurance: PropTypes.array.isRequired
+    insurance: PropTypes.array
   },
 
   getDefaultProps () {

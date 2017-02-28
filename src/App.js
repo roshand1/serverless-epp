@@ -33,7 +33,6 @@ componentDidMount(){
       debugger;
         let viewPracModel =this.props.store? this.props.store.practiceModel:'';
         let officeModel =viewPracModel?{officeLocations:viewPracModel.OfficeLocations}:'';
-        let testimoniesModel = this.props.store? this.props.store.testimonialModel.Testimonies:'';
 
         return <div>{viewPracModel &&
             <div className="body-content container">
@@ -50,44 +49,36 @@ componentDidMount(){
                         </div>
                       }
 
-                      {viewPracModel.PageOptions.NoInsurance &&
-                        <div id="component-hgInsurance" class="componentWrap">
+                      {viewPracModel.PageOptions && viewPracModel.PageOptions.NoInsurance &&
+                        <div id="component-hgInsurance" className="componentWrap">
                             <HgInsurance {...viewPracModel.InsuranceModel }/>
                         </div>
                       }
-                      {viewPracModel.ShowServices && !viewPracModel.PageOptions.NoServices &&
-                          <div id="component-services" class="componentWrap">
+                      {viewPracModel.ShowServices &&viewPracModel.PageOptions && !viewPracModel.PageOptions.NoServices &&
+                          <div id="component-services" className="componentWrap">
                             <HgServices {...viewPracModel.ServicesInfo}/>
                           </div>
                       }
                          <div className="practice-info-wrapper componentWrap">
                             <div id="component-hgOfficeInfo">
-                                <HgPracticeInfo
-                                acceptsNewPatients={viewPracModel.PracticeInfo.acceptsNewPatients}
-                                address={viewPracModel.PracticeInfo.address}
-                                isMobile={viewPracModel.PracticeInfo.isMobile}
-                                isPremium={viewPracModel.PracticeInfo.isPremium}
-                                logoImageSrc={viewPracModel.PracticeInfo.logoImageSrc}
-                                numberOfOffices={viewPracModel.PracticeInfo.numberOfOffices}
-                                phoneNumber={viewPracModel.PracticeInfo.phoneNumber}
-                                officeHours={viewPracModel.PracticeInfo.officeHours}
-                                practiceName={viewPracModel.PracticeInfo.practiceName}
-                                moreInfoLink={viewPracModel.PracticeInfo.moreInfoLink} />
+                                <HgPracticeInfo {...viewPracModel.PracticeInfo} />
                             </div>
                           </div>
                           
                             {viewPracModel.ShowContentAdds && !viewPracModel.PageOptions.NoContentCards ?
-                                <div id="component-hgAddContent"  class="content-and-ad"><HgContentAndAd {...viewPracModel.ContentCards}/></div> : <div id="component-hgAddContent"  class="content-and-ad"><HgContentAndAd {...viewPracModel.ContentCards}/></div>
+                                <div id="component-hgAddContent"  className="content-and-ad"><HgContentAndAd {...viewPracModel.ContentCards}/></div> : <div id="component-hgAddContent"  className="content-and-ad"><HgContentAndAd {...viewPracModel.ContentCards}/></div>
                             }
 
-                          {testimoniesModel.length >0 &&
-                           <div id="component-testimonies" class="componentWrap">
-                                <HgTestimonial testimonies={testimoniesModel}/>
+                          
+                           <div id="component-testimonies" className="componentWrap">
+                                <HgTestimonial url={'https://s3.amazonaws.com/paidpremiumtest/Provider/x2mt8/Files/testimonies.json'}/>
                            </div>
-                          }
+                          
 
-                            <div>
-                                <div id="component-hgProviders" className="componentWrap">
+                           
+                            {viewPracModel.ProviderListModel &&
+                                 <div>
+                                  <div id="component-hgProviders" className="componentWrap">
                                     <h2>Our Providers</h2>
                                     <HgOurProviders isMobile={viewPracModel.ProviderListModel.isMobile}
                                     providerArr={viewPracModel.ProviderListModel.providerArr}
@@ -97,29 +88,31 @@ componentDidMount(){
                                     <br className="clearBoth"/>
                                 </div>
                             </div>
+                            }
+                               
                             <div id="component-practices" className="componentWrap">
                                 <HgOfficeLocation isiPad={false} isMobile={false} visiting={officeModel}/>
                             </div>
                               
                             {!viewPracModel.UpOneLevel &&  
                             <div id="breadcrumb">                              
-                                <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb" class="breadcrumbLink">
+                                <span className="breadcrumbLink">
                                     <a href={viewPracModel.UpOneLevel} 
                                         title={viewPracModel.OfficeCity} 
-                                        data-hgoname="breadcrumb-navigation-link" 
-                                        itemprop="url">
-                                            <span itemprop="title">See more group practices in {viewPracModel.OfficeCity}.</span>
+                                        data-hgoname="breadcrumb-navigation-link">
+                                            <span>See more group practices in {viewPracModel.OfficeCity}.</span>
                                     </a>
                                 </span>
                             </div>
                             }   
 
                       </div>
-
-
+                      {viewPracModel.FooterModel &&
                             <div id="component-footer">
                                 <HgFooter footer={viewPracModel.FooterModel.footer}/>
                             </div>
+                      }
+
                       </div>
                     </div>
                     }

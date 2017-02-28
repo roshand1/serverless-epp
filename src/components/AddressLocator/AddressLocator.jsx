@@ -74,10 +74,9 @@ const AddressLocator = React.createClass({
     return (
       <div
         className={classNames(classList)}
-        itemScope itemProp="location"
-        itemType="http://schema.org/Place">
+        itemScope>
         {!!this.props.latitude && !!this.props.longitude &&
-          <div itemProp="geo" itemScope itemType="http://schema.org/GeoCoordinates">
+          <div>
             <meta content={this.props.latitude} itemProp="latitude" />
             <meta content={this.props.longitude} itemProp="longitude" />
           </div>

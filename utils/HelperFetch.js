@@ -14,14 +14,15 @@ const fetch = (url,options = {},callBack) => {
     }
     else if(method =='POST'){
                 post(url,body,callBack);
+                //var req = request(url).post(body);
     }
 }
 
-const post = function(url,body){
+const post = function(url,body,callBack){
     // helper functions: options, head, get, post, put, patch, del 
-agent.put(url, body)
+agent.post(url, body)
   .then(function(res) {
-    callBack('OK', JSON.parse(res.text));
+    callBack('OK', JSON.parse(res.body));
   });
 }
 
