@@ -9,6 +9,8 @@ import {getProvidersByFunc} from '../redux/action';
 import * as actions from '../redux/action';
 
 import HgHero from './components/HgHero/HgHero.jsx' 
+import HgInsurance from './components/HgInsurance/HgInsurance.jsx' 
+import HgServices from './components/HgInsurance/HgInsurance.jsx' 
 import HgPracticeInfo from './components/HgPracticeInfo/HgPracticeInfo.jsx' 
 import HgPracticeLinks from './components/HgPracticeLinks/HgPracticeLinks.jsx'  
 import HgOurProviders from './components/HgOurProviders/HgOurProviders.jsx'
@@ -39,14 +41,23 @@ componentDidMount(){
                        <div id="inlineAds">
                       
                        </div>
-
                       <div className="content-left">
-                      
+                      {viewPracModel.ShowHero && !viewPracModel.NoMovie &&
                         <div id="component-hgHero">
-                            <HgHero practiceName={viewPracModel.LogoWithVideo.practiceName }
-                                  heroImage={viewPracModel.LogoWithVideo.heroImage} />
+                            <HgHero {...viewPracModel.LogoWithVideo }/>
+                        </div>
+                      }
+                      {viewPracModel.PageOptions.NoInsurance &&
+                        <div id="component-hgInsurance" class="componentWrap">
+                            <HgInsurance {...viewPracModel.InsuranceModel }/>
                         </div>
 
+                      }
+                      {viewPracModel.ShowServices && !viewPracModel.PageOptions.NoServices &&
+                          <div id="component-services" class="componentWrap">
+                            <HgServices {...viewPracModel.ServicesInfo}/>
+                          </div>
+                      }
                          <div className="practice-info-wrapper componentWrap">
                             <div id="component-hgOfficeInfo">
                                 <HgPracticeInfo

@@ -1,0 +1,54 @@
+// HG Services
+// -------------------------------------
+@import '~@hg/three-ui/_globalstyle/_hg-variables';
+@import '~@hg/three-ui/_globalstyle/_hg-mixins';
+.hg3-insurance {
+    max-width: 1366px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.hg3-practice-insurance {
+    width: 100%;
+    background: #fff;
+    box-shadow: 0 2px 5px 0 #a5c7d3;
+    padding: 0 20px;
+    &.desktop {
+        .insurance-list {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            column-count: 2;
+            column-gap: 20px;
+            column-fill: balance;
+            li {
+                position: relative;
+                padding-left: 20px;
+                &:before {
+                    position: absolute;
+                    font-size: 24px;
+                    line-height: 1;
+                    left: 0;
+                    content: '\2022';
+                }
+            }
+        }
+    }
+}
+
+.hg3-practice-insurance-content {
+    width: 100%;
+    padding: 25px;
+    .services-list {
+        margin-left: 20px;
+        padding: 0;
+    }
+    .view-more {
+        margin-left: 20px;
+    }
+    .view-more-button {
+        display: block;
+        width: 240px;
+        margin: 15px auto 0;
+    }
+}
