@@ -29,12 +29,12 @@
             window.HG3 = window.HG3 || {};
             HG3 = window.HG3;
             window.googletag = {};
-            window.omniturePageTracking = {};
-            window.s_account = {};
-            window.s_pageName = '';
-            window.s_server = '';
-            window.s_basePageName = '';
-            window.s_contextData = [];
+            // window.PageTracking = {};
+            // window.s_account = {};
+            // window.s_pageName = '';
+            // window.s_server = '';
+            // window.s_basePageName = '';
+            // window.s_contextData = [];
         </script>
         <!--AdsModel is dispatched from action.js file Redux-->
         <!--Lazy loading ads.min.js-->
@@ -53,17 +53,17 @@
                head.appendChild(script);
 
             //    Omniture
-            omniturePageTracking = e.detail.OmniturePageTracking; 
-            s_account = e.detail.OmniturePageTracking ? e.detail.OmniturePageTracking.Account:{};
-            s_pageName = e.detail.OmniturePageTracking ? e.detail.OmniturePageTracking.PageName:'';
-            s_server = e.detail.OmniturePageTracking ? e.detail.OmniturePageTracking.Server:'';
-            s_basePageName = e.detail.OmniturePageTracking ? e.detail.OmniturePageTracking.BasePageName:'';
-            s_contextData = e.detail.OmniturePageTracking ? e.detail.OmniturePageTracking.ContextData:[];
-            //    var head= document.getElementsByTagName('head')[0];
-            //    var script= document.createElement('script');
-               script.type= 'text/javascript';
-               script.src= 'omniture.min.js';
-               head.appendChild(script);
+            // PageTracking = e.detail.PageTracking; 
+            // s_account = PageTracking ? e.detail.OmniturePageTracking.Account:{};
+            // s_pageName = PageTracking ? e.detail.OmniturePageTracking.PageName:'';
+            // s_server = PageTracking ? e.detail.OmniturePageTracking.Server:'';
+            // s_basePageName = PageTracking ? e.detail.OmniturePageTracking.BasePageName:'';
+            // s_contextData = PageTracking ? PageTracking.ContextData:[];
+            // //    var head= document.getElementsByTagName('head')[0];
+            // //    var script= document.createElement('script');
+            //    script.type= 'text/javascript';
+            //    script.src= 'omniture.min.js';
+            //    head.appendChild(script);
            },false);
        </script>
 
@@ -73,9 +73,8 @@
             <script src="bundle.js"></script>
         </div>
 <!--================================================================= Omniture =================================================================================================================-->
-        
+<!--        
         <script type="text/javascript">
-        debugger;
            if (s_pageName && s_server && s_contextData.length)
            {
             s.pageName = s_pageName;
@@ -97,7 +96,7 @@
                     }
                 s.pageName = s_basePageName;
             }
-        </script>
+        </script>-->
 
 <!--================================================================== Ads =====================================================================================================================-->
 
