@@ -30,9 +30,19 @@ componentDidMount(){
  getPracticeModel();
 },
     render(){
-      debugger;
         let viewPracModel =this.props.store? this.props.store.practiceModel:'';
         let officeModel =viewPracModel?{officeLocations:viewPracModel.OfficeLocations}:'';
+        if(viewPracModel)
+        {
+            if(viewPracModel.FooterModel && viewPracModel.FooterModel.footer){
+            viewPracModel.FooterModel.footer.footerLogo = "https://www.healthgrades.com/uisvc/v1_0/EPPUIService/public3/images/healthgrades-logo.svg";
+            }
+            if(viewPracModel.LogoWithVideo)
+            {
+                viewPracModel.LogoWithVideo.heroImage = "https://www.healthgrades.com/uisvc/v1_0/EPPUIService/public3/images/movie.jpg";
+            }
+        }
+        
 
         return <div>{viewPracModel &&
             <div className="body-content container">
@@ -112,7 +122,6 @@ componentDidMount(){
                                 <HgFooter footer={viewPracModel.FooterModel.footer}/>
                             </div>
                       }
-
                       </div>
                     </div>
                     }

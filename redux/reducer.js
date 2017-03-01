@@ -2,7 +2,6 @@
 let reducer = function(state, action) {
   switch (action.type) {
     case 'FETCH_PROV_SUCCESS':
-    debugger;
       return Object.assign({}, state, {
         providers: action.payload
       });

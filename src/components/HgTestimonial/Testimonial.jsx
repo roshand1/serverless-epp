@@ -14,7 +14,6 @@ const Testimonial = React.createClass({
   },
 
    componentDidMount: function(){
-     debugger;
          const { getTestimonialModel} = this.props;
       getTestimonialModel(this.props.url);
     },
