@@ -35,7 +35,7 @@ export function getPracticeModel(){
             if(status =='OK'){
                 debugger;
                 dispatch({type:'FETCH_PRAC_MODEL_SUCCESS',payload:practiceModel});
-                var event = new CustomEvent('displayAds', { 'detail': {AdModel:practiceModel.Adds,OmniturePageTracking:practiceModel.OmniturePageTracking} });
+                var event = new CustomEvent('displayAds', { 'detail': {AdModel:practiceModel.Adds,OmniturePageTracking:practiceModel.PageTracking} });
                 document.dispatchEvent(event);
             }
             else{

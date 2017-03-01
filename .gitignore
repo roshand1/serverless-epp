@@ -25,7 +25,6 @@ Temporary Items
 .apdisk
 
 # Public directory stuff
-app/
 *.csv
 
 node_modules

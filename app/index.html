@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Concentra Medical Center</title>
+        <meta property="fb:admins" content="30000933" />
+        <meta property="fb:admins" content="100005035541393" />
+        <meta name="msapplication-TileColor" content="#FFFFFF">
+        <meta name="msapplication-TileImage" content="//d21s1xi1bwlv6y.cloudfront.net/hgstatic/img/favicon-144.png">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+        <link rel="canonical" href="@Model.PageTracking.CanonicalUrl" />
+        <link rel="shortcut icon" href="//d21s1xi1bwlv6y.cloudfront.net/hgstatic/img/favicon2.ico">
+        <link rel="icon" type="image/png" sizes="196x196" href="//d21s1xi1bwlv6y.cloudfront.net/hgstatic/img/favicon-196.png">
+        <link rel="icon" type="image/png" sizes="160x160" href="//d21s1xi1bwlv6y.cloudfront.net/hgstatic/img/favicon-160.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="//d21s1xi1bwlv6y.cloudfront.net/hgstatic/img/favicon-96.png">
+        <link rel="icon" type="image/png" sizes="64x64" href="//d21s1xi1bwlv6y.cloudfront.net/hgstatic/img/favicon-64.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="//d21s1xi1bwlv6y.cloudfront.net/hgstatic/img/favicon-32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="//d21s1xi1bwlv6y.cloudfront.net/hgstatic/img/favicon-16.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="//d21s1xi1bwlv6y.cloudfront.net/hgstatic/img/favicon-152.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="//d21s1xi1bwlv6y.cloudfront.net/hgstatic/img/favicon-120.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="//d21s1xi1bwlv6y.cloudfront.net/hgstatic/img/favicon-76.png">
+        <link rel="apple-touch-icon" href="//d21s1xi1bwlv6y.cloudfront.net/hgstatic/img/favicon-57.png">
+        <link type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet" />
+        <link type="text/css" href="https://fonts.googleapis.com/css?family=Raleway:300,400,500" rel="stylesheet" />
+    </head>
+    <body>
+        <!--Global variable for ads-->
+        <script type="text/javascript">
+            window.HG3 = window.HG3 || {};
+            HG3 = window.HG3;
+            window.googletag = {};
+            window.omniturePageTracking = {};
+            window.s_account = {};
+            window.s_pageName = '';
+            window.s_server = '';
+            window.s_basePageName = '';
+            window.s_contextData = [];
+        </script>
+        <!--AdsModel is dispatched from action.js file Redux-->
+        <!--Lazy loading ads.min.js-->
+       <script>   
+       debugger;   
+           document.addEventListener('displayAds',function(e){
+               debugger;
+               console.log(e);
+               HG3.ads = function(){ return e.detail.AdModel;}();
+
+            //    Pull ad file
+               var head= document.getElementsByTagName('head')[0];
+               var script= document.createElement('script');
+               script.type= 'text/javascript';
+               script.src= 'ads.min.js';
+               head.appendChild(script);
+
+            //    Omniture
+            omniturePageTracking = e.detail.OmniturePageTracking; 
+            s_account = e.detail.OmniturePageTracking ? e.detail.OmniturePageTracking.Account:{};
+            s_pageName = e.detail.OmniturePageTracking ? e.detail.OmniturePageTracking.PageName:'';
+            s_server = e.detail.OmniturePageTracking ? e.detail.OmniturePageTracking.Server:'';
+            s_basePageName = e.detail.OmniturePageTracking ? e.detail.OmniturePageTracking.BasePageName:'';
+            s_contextData = e.detail.OmniturePageTracking ? e.detail.OmniturePageTracking.ContextData:[];
+            //    var head= document.getElementsByTagName('head')[0];
+            //    var script= document.createElement('script');
+               script.type= 'text/javascript';
+               script.src= 'omniture.min.js';
+               head.appendChild(script);
+           },false);
+       </script>
+
+        <!--Import React Components-->
+        <div>
+            <div id="app"></div>
+            <script src="bundle.js"></script>
+        </div>
+<!--================================================================= Omniture =================================================================================================================-->
+        
+        <script type="text/javascript">
+        debugger;
+           if (s_pageName && s_server && s_contextData.length)
+           {
+            s.pageName = s_pageName;
+            s.server = s_server;
+
+                    for(var i=0;i < s_contextData.length; i++)
+                    {
+                        {
+                             <text>s.contextData[s_contextData[i].Key] = s_contextData[i].Value;</text>
+                        }
+                    }
+                    if (omniturePageTracking.AutoFire)
+                    {
+                            <text>
+                                var s_code = s.t();
+                                if (s_code)
+                                    document.write(s_code);
+                            </text>
+                    }
+                s.pageName = s_basePageName;
+            }
+        </script>
+
+<!--================================================================== Ads =====================================================================================================================-->
+
+        <!--Top Ads-->
+        <!--TODO Hide ADS for NoAds flag-->
+           <div id="div-gpt-ad-outofpage-oop" class="trackingPixel"></div>
+                <div id='overlay' class='epp-top-ad'>
+                    <div class="" id="div-gpt-ad-overlay"></div>
+                    <script>if(googletag.cmd){googletag.cmd.push(function () { googletag.display('div-gpt-ad-overlay'); }); } </script>
+            </div>
+            <div id="component-hgLogo" class="@logoClass">                   
+                    <div>
+                        <!--@if (!Model.PageOptions.NoAds)
+                        {-->
+                            <div id="div-gpt-ad-logo" class="hg-logo-img">
+                            </div>
+                            <div id="loading_dc"></div>
+                            <script> if(googletag.cmd){googletag.cmd.push(function () { googletag.display('div-gpt-ad-logo'); }); } </script>
+                        <!--}-->
+                    </div>
+                </div>
+
+                <div id='rightTop' class='epp-middle-ad' style="position:absolute;right:7%;top:19%">
+                            <div class="" id="div-gpt-ad-aboveright1"></div>
+                            <script> if(googletag.cmd){googletag.cmd.push(function () { googletag.display('div-gpt-ad-aboveright1'); }); } </script>
+                </div>
+
+                <!--TODO impliment enableKruxIntegration bring code from EPP UI-->
+         <script class="kxct" data-id="q08k81wph" data-timing="async" data-version="2.0" type="text/javascript">
+                window.Krux || ((Krux = function () { Krux.q.push(arguments) }).q = []);
+                (function () {
+                    var k = document.createElement('script'); k.type = 'text/javascript'; k.async = true;
+                    var m, src = (m = location.href.match(/\bkxsrc=([^&]+)/)) && decodeURIComponent(m[1]);
+                    k.src = /^https?:\/\/([a-z0-9_\-\.]+\.)?krxd\.net(:\d{1,5})?\/controltag\//i.test(src) ? src : src === "disable" ? "" :
+                      (location.protocol === "https:" ? "https:" : "http:") + "//cdn.krxd.net/controltag?confid=q08k81wph";
+                    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(k, s);
+                }());
+            </script>
+        <!-- END Krux Controltag -->
+            <script class="kxint" type="text/javascript">
+                window.Krux || ((Krux = function () { Krux.q.push(arguments); }).q = []);
+                (function () {
+                    function retrieve(n) {
+                        var m, k = 'kxhealthgrades_' + n, ls = (function () {
+                            try {
+                                return window.localStorage;
+                            } catch (e) {
+                                return null;
+                            }
+                        })();
+                        if (ls) {
+                            return ls[k] || "";
+                        } else if (navigator.cookieEnabled) {
+                            m = document.cookie.match(k + '=([^;]*)');
+                            return (m && unescape(m[1])) || "";
+                        } else {
+                            return '';
+                        }
+                    }
+                    Krux.user = retrieve('user');
+                    Krux.segments = retrieve('segs') ? retrieve('segs').split(',') : [];
+                })();
+            </script>
+            <script>
+                //set KRUX ad targets
+                (function () {
+                    if (typeof (HG3) !== 'undefined' && typeof (HG3.ads) !== 'undefined') {
+                        HG3.ads.targets.push({ key: 'kuid', value: [Krux.user] });
+                        if (Krux.segments.length > 0) HG3.ads.targets.push({ key: 'ksg', value: [Krux.segments] });
+                    }
+                })();
+            </script>
+    </body>
