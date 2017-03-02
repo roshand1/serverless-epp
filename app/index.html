@@ -29,19 +29,18 @@
             window.HG3 = window.HG3 || {};
             HG3 = window.HG3;
             window.googletag = {};
-            // window.PageTracking = {};
-            // window.s_account = {};
-            // window.s_pageName = '';
-            // window.s_server = '';
-            // window.s_basePageName = '';
-            // window.s_contextData = [];
+            window.PageTracking = {};
+            window.s_account = {};
+            window.s_pageName = '';
+            window.s_server = '';
+            window.s_basePageName = '';
+            window.s_contextData = [];
+            window.s = [];
         </script>
         <!--AdsModel is dispatched from action.js file Redux-->
         <!--Lazy loading ads.min.js-->
        <script>   
-       debugger;   
            document.addEventListener('displayAds',function(e){
-               debugger;
                console.log(e);
                HG3.ads = function(){ return e.detail.AdModel;}();
 
@@ -50,20 +49,23 @@
                var script= document.createElement('script');
                script.type= 'text/javascript';
                script.src= 'ads.min.js';
-               head.appendChild(script);
+              head.appendChild(script);
 
             //    Omniture
-            // PageTracking = e.detail.PageTracking; 
-            // s_account = PageTracking ? e.detail.OmniturePageTracking.Account:{};
-            // s_pageName = PageTracking ? e.detail.OmniturePageTracking.PageName:'';
-            // s_server = PageTracking ? e.detail.OmniturePageTracking.Server:'';
-            // s_basePageName = PageTracking ? e.detail.OmniturePageTracking.BasePageName:'';
-            // s_contextData = PageTracking ? PageTracking.ContextData:[];
-            // //    var head= document.getElementsByTagName('head')[0];
-            // //    var script= document.createElement('script');
+            PageTracking = e.detail.PageTracking; 
+            s_account = PageTracking ? PageTracking.OmniturePageTracking.Account:{};
+            s_pageName = PageTracking ? PageTracking.OmniturePageTracking.PageName:'';
+            s_server = PageTracking ? PageTracking.OmniturePageTracking.Server:'';
+            s_basePageName = PageTracking ? PageTracking.OmniturePageTracking.BasePageName:'';
+            s_contextData = PageTracking ? PageTracking.OmniturePageTracking.ContextData:[];
+            //    var head= document.getElementsByTagName('head')[0];
+            //    var script= document.createElement('script');
             //    script.type= 'text/javascript';
             //    script.src= 'omniture.min.js';
             //    head.appendChild(script);
+            //       var event = new CustomEvent('executeFunc');
+            //     document.dispatchEvent(event);
+
            },false);
        </script>
 
@@ -73,31 +75,31 @@
             <script src="bundle.js"></script>
         </div>
 <!--================================================================= Omniture =================================================================================================================-->
-<!--        
-        <script type="text/javascript">
-           if (s_pageName && s_server && s_contextData.length)
-           {
-            s.pageName = s_pageName;
-            s.server = s_server;
+        
+<!--<script>
+    document.addEventListener('executeFunc',function(e){
+        if (s_pageName && s_server && s_contextData.length)
+                {
+                    s.pageName = s_pageName;
+                    s.server = s_server;
+                     s.contextData=[];
 
-                    for(var i=0;i < s_contextData.length; i++)
-                    {
-                        {
-                             <text>s.contextData[s_contextData[i].Key] = s_contextData[i].Value;</text>
-                        }
-                    }
-                    if (omniturePageTracking.AutoFire)
-                    {
-                            <text>
-                                var s_code = s.t();
-                                if (s_code)
-                                    document.write(s_code);
-                            </text>
-                    }
-                s.pageName = s_basePageName;
-            }
-        </script>-->
-
+                            for(var i=0;i < s_contextData.length; i++)
+                            {
+                                {
+                                   s.contextData[s_contextData[i].id] = s_contextData[i].value;
+                                }
+                            }
+                            if (PageTracking.OmniturePageTracking.AutoFire)
+                            {
+                                        var s_code = s.t();
+                                        if (s_code)
+                                            document.write(s_code);
+                            }
+                        s.pageName = s_basePageName;
+                }
+    },false);
+</script>-->
 <!--================================================================== Ads =====================================================================================================================-->
 
         <!--Top Ads-->

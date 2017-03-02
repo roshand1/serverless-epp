@@ -33,9 +33,8 @@ export function getPracticeModel(){
     return function(dispatch){
         _fetch('https://syfyr9lyyk.execute-api.us-east-1.amazonaws.com/prod/getpracticeview',{method:'POST',body:{"practiceId":"oo65fmp"}},function(status, practiceModel){
             if(status =='OK'){
-                debugger;
                 dispatch({type:'FETCH_PRAC_MODEL_SUCCESS',payload:practiceModel});
-                var event = new CustomEvent('displayAds', { 'detail': {AdModel:practiceModel.Adds,OmniturePageTracking:practiceModel.PageTracking} });
+                var event = new CustomEvent('displayAds', { 'detail': {AdModel:practiceModel.Adds,PageTracking:practiceModel.PageTracking} });
                 document.dispatchEvent(event);
             }
             else{

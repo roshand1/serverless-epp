@@ -47,31 +47,21 @@ componentDidMount(){
         return <div>{viewPracModel &&
             <div className="body-content container">
                       <div id="content-section">
-
-                       <div id="header-section">
-        <div >
-            <div className="hg3-header">
-                <span className="hg3-brand" title="Healthgrades" href="">
-                    <span className="sr-only">Healthgrades</span>
-                </span>
-                <div>
-                    <div className="hg3m-nav">
-                        <label className="hg3m-nav-toggle" for="mobileNav"></label>
-                        <div className="nav-content">
-                            <div>
-                                <div className="blur-on-request"></div>
+                      <div id="header-section">
+                         <div className="hg3-header">
+                                <span className="hg3-brand" title="Healthgrades" href="">
+                                    <span className="sr-only">Healthgrades</span>
+                                </span>
+                                <div className="hg3m-nav">
+                                    <label className="hg3m-nav-toggle" for="mobileNav"></label>
+                                    <div className="nav-content">
+                                        <div>
+                                            <div className="blur-on-request"></div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-                       </div>
-                       <div id="inlineAds">
-                      
-                       </div>
-
                       <div className="content-left">
                       
                       {viewPracModel.ShowHero && !viewPracModel.NoMovie &&
@@ -79,6 +69,15 @@ componentDidMount(){
                             <HgHero {...viewPracModel.LogoWithVideo }/>
                         </div>
                       }
+                      
+                        <div className="practice-info-wrapper componentWrap">
+                            <div id="component-hgOfficeInfo">
+                                <HgPracticeInfo {...viewPracModel.PracticeInfo} />
+                            </div>
+                        </div>
+                        {viewPracModel.ShowContentAdds && !viewPracModel.PageOptions.NoContentCards ?
+                                <div id="component-hgAddContent"  className="content-and-ad"><HgContentAndAd {...viewPracModel.ContentCards}/></div> : <div id="component-hgAddContent"  className="content-and-ad"><HgContentAndAd {...viewPracModel.ContentCards}/></div>
+                        }
 
                       {viewPracModel.PageOptions && viewPracModel.PageOptions.NoInsurance &&
                         <div id="component-hgInsurance" className="componentWrap">
@@ -90,16 +89,6 @@ componentDidMount(){
                             <HgServices {...viewPracModel.ServicesInfo}/>
                           </div>
                       }
-                         <div className="practice-info-wrapper componentWrap">
-                            <div id="component-hgOfficeInfo">
-                                <HgPracticeInfo {...viewPracModel.PracticeInfo} />
-                            </div>
-                          </div>
-                          
-                            {viewPracModel.ShowContentAdds && !viewPracModel.PageOptions.NoContentCards ?
-                                <div id="component-hgAddContent"  className="content-and-ad"><HgContentAndAd {...viewPracModel.ContentCards}/></div> : <div id="component-hgAddContent"  className="content-and-ad"><HgContentAndAd {...viewPracModel.ContentCards}/></div>
-                            }
-
                           
                            <div id="component-testimonies" className="componentWrap">
                                 <HgTestimonial url={'https://s3.amazonaws.com/paidpremiumtest/Provider/x2mt8/Files/testimonies.json'}/>
