@@ -18,10 +18,13 @@
 .epp-top-ad {
     position: fixed;
     width: 100%;
+    padding:15px;
     z-index: 9999;
     top: 60px;
-    background: #dcf2f9;
+    background: rgba(220, 242, 249, .9);
     text-align:center;
+    box-shadow: 1px 1px 1px #cce4ec;
+ 
 }
 
 .hg3-i-times-circle:before {
@@ -55,6 +58,75 @@
 .hg3-i-stethoscope:before {
     content: "\f0f1";
 }
+.practice-name{
+    text-align: center;
+    background-color: #fff;
+    padding-top: 166px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #ccc;
+}
+@import './CommonBundleRoot';
+
+
+#content-section {
+    
+    .practice-name{
+        padding:15px;
+        margin-top:180px;
+    }
+    .content-left{
+        margin-top:15px;
+
+        .componentWrap{
+            #component-hgOfficeInfo{
+                width:76%;
+                padding-top: 0;
+
+                .leaflet-right{
+                    left:0;
+
+                    .leaflet-control{
+                        float:left;
+                    }
+                }
+            }
+            #hospital-tabs{
+                padding-right:10px;
+            }
+            .hg3-office-map-display{
+                box-shadow:none;
+            }
+
+
+        }
+        .hg3-testimonial-content{
+            h2{
+                display:none;
+            }
+        }
+    }
+}
+
+
+
+    #rightTop{
+        width:100%;
+        max-width: 1365px;
+        margin: auto;
+        position:absolute;
+        top:298px;
+        left: 0;
+        right: 0;
+       
+        #div-gpt-ad-aboveright1{
+            margin-right: 25px;
+            border-left: 15px solid #fff;
+            float:right;
+            background:#fff;
+           
+        }
+    }
+
 @import 'CommonBundleRoot.less';
 @import 'index.less';
 @import 'templateStyle.scss';
