@@ -3,14 +3,14 @@ import _fetch from '../utils/HelperFetch.js'
 export function getProvidersByPracticeId(practiceId, skip, take){
 const uri = '?practiceId=' + practiceId +'&skip='+skip+'&take='+take;
     return function(dispatch){
-        fetch('https://8afzabjeui.execute-api.us-east-1.amazonaws.com/Prod/GetProviders'+uri)
-          .then((response)=> response.json())
-          .then((response) =>{
-              dispatch({type:'FETCH_PROV_SUCCESS',payload:response});
-          })
-          .catch((error)=>{
-              return dispatch({type:'FETCH_PROV_ERROR',payload:error});
-          });
+        _fetch('https://8afzabjeui.execute-api.us-east-1.amazonaws.com/Prod/GetProviders'+uri,{method:'GET'},function(status, response){
+            if(status == 'OK'){
+                dispatch({type:'FETCH_PROV_SUCCESS',payload:response});
+            }
+            else{
+                 return dispatch({type:'FETCH_PRAC_MODEL_ERROR',payload:error});
+            }
+        })
     }
 };
 
