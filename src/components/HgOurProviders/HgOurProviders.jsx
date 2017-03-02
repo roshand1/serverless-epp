@@ -86,7 +86,7 @@ const HgOurProviders =  React.createClass({
 const mapStateToProps = (state) => {
   if (state.providers){
   return {
-         providerArr: state.getproviders.providerArr,
+         providerArr: state.providers.providerArr,
     }
   }
   else{
