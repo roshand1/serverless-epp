@@ -17,7 +17,7 @@ import _fetch from '../utils/HelperFetch.js'
 
 export function getPracticeModel(){
     var pracId = getParameterByName("practiceid",location.href)
-    debugger;
+    pracId = pracId ? pracId : 'YBRWWS';
     return function(dispatch){
         _fetch('https://syfyr9lyyk.execute-api.us-east-1.amazonaws.com/prod/getpracticeview',{method:'POST',body:{"practiceId":pracId}},function(status, practiceModel){
             if(status =='OK'){
