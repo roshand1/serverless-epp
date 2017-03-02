@@ -42,7 +42,6 @@ componentDidMount(){
                 viewPracModel.LogoWithVideo.heroImage = "https://www.healthgrades.com/uisvc/v1_0/EPPUIService/public3/images/movie.jpg";
             }
         }
-        
 
         return <div>{viewPracModel &&
             <div className="body-content container">
@@ -62,6 +61,10 @@ componentDidMount(){
                                 </div>
                             </div>
                         </div>
+                        <div>
+                            <h1 className="practice-name">{viewPracModel.LogoModel.practiceName} </h1>
+                        </div>
+
                       <div className="content-left">
                       
                       {viewPracModel.ShowHero && !viewPracModel.NoMovie &&
@@ -89,11 +92,11 @@ componentDidMount(){
                             <HgServices {...viewPracModel.ServicesInfo}/>
                           </div>
                       }
-                          
+                          {viewPracModel.Testimonies.testimonyUrl &&
                            <div id="component-testimonies" className="componentWrap">
-                                <HgTestimonial url={'https://s3.amazonaws.com/paidpremiumtest/Provider/x2mt8/Files/testimonies.json'}/>
+                                <HgTestimonial url={'https://s3.amazonaws.com/'+viewPracModel.Testimonies.testimonyUrl}/>
                            </div>
-                          
+                          }
 
                            
                             {viewPracModel.ProviderListModel &&
