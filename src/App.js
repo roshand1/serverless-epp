@@ -47,6 +47,27 @@ componentDidMount(){
         return <div>{viewPracModel &&
             <div className="body-content container">
                       <div id="content-section">
+
+                       <div id="header-section">
+        <div >
+            <div className="hg3-header">
+                <span className="hg3-brand" title="Healthgrades" href="">
+                    <span className="sr-only">Healthgrades</span>
+                </span>
+                <div>
+                    <div className="hg3m-nav">
+                        <label className="hg3m-nav-toggle" for="mobileNav"></label>
+                        <div className="nav-content">
+                            <div>
+                                <div className="blur-on-request"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+                       </div>
                        <div id="inlineAds">
                       
                        </div>
