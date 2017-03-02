@@ -94,12 +94,8 @@ componentDidMount(){
                       }
                           {viewPracModel.Testimonies.testimonyUrl &&
                            <div id="component-testimonies" className="componentWrap">
-<<<<<<< HEAD
                            <h2>Patient Testimonials</h2>
-                                <HgTestimonial url={'https://s3.amazonaws.com/paidpremiumtest/Provider/x2mt8/Files/testimonies.json'}/>
-=======
                                 <HgTestimonial url={'https://s3.amazonaws.com/'+viewPracModel.Testimonies.testimonyUrl}/>
->>>>>>> 426670a5f7fe7889330b0fda55ff70c0802846ba
                            </div>
                           }
 
