@@ -91,6 +91,7 @@ componentDidMount(){
                       }
                           
                            <div id="component-testimonies" className="componentWrap">
+                           <h2>Patient Testimonials</h2>
                                 <HgTestimonial url={'https://s3.amazonaws.com/paidpremiumtest/Provider/x2mt8/Files/testimonies.json'}/>
                            </div>
                           
@@ -111,6 +112,7 @@ componentDidMount(){
                             }
                                
                             <div id="component-practices" className="componentWrap">
+                            <h2>Our Locations</h2>
                                 <HgOfficeLocation isiPad={false} isMobile={false} visiting={officeModel}/>
                             </div>
                               
