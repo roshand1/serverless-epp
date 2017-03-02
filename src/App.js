@@ -1,13 +1,10 @@
 import './_hg-eppRightRail.less';
 import './App.less'
-import './index.less'
-import './templateStyle.scss'
 import React, { PropTypes } from 'react'
 import ReactDOM from 'react-dom'
 import { connect } from 'react-redux';
 import {getProvidersByFunc} from '../redux/action';
 import * as actions from '../redux/action';
-
 import HgHero from './components/HgHero/HgHero.jsx' 
 import HgInsurance from './components/HgInsurance/HgInsurance.jsx' 
 import HgServices from './components/HgInsurance/HgInsurance.jsx' 

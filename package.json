@@ -7,7 +7,7 @@
     "start": "webpack-dev-server --port 6060 --content-base app/ --inline --display-reasons --display-error-details"
   },
   "author": "healthgrades",
-  "devDependencies": {
+  "dependencies": {
     "@hg/hg-common-toolz": "git+https://git.healthgrades.com/blue-falcon/hg-common-toolz.git#release",
     "@hg/styleguide-kit": "git+https://git.healthgrades.com/blue-falcon/styleguide-kit.git#release",
     "@hg/three-ui": "git+https://git.healthgrades.com/blue-falcon/three-ui.git#v1.7.19",
@@ -19,6 +19,7 @@
     "@healthgrades/u2-components": "git+https://git.healthgrades.com/blue-falcon/u2-components.git#v1.1.2",
     "@hg/profile-ui": "git+https://git.healthgrades.com/blue-falcon/profile-ui.git#v1.5.37",
     "@hg/content-ui": "git+https://git.healthgrades.com/blue-falcon/content-ui.git#v1.0.0",
+    "autoprefixer-loader": "3.1.0",
     "babel-core": "^6.14.0",
     "babel-loader": "^6.2.5",
     "babel-plugin-transform-object-rest-spread": "^6.8.0",
@@ -32,14 +33,17 @@
     "babel-preset-react-hmre": "^1.1.0",
     "classnames": "^2.1.3",
     "css-loader": "^0.23.1",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "expose-loader": "0.7.0",
     "install": "^0.4.1",
     "jquery": "2.1.4",
     "json-loader": "^0.5.4",
-      "leaflet": "0.7.7",
+    "leaflet": "0.7.7",
     "less": "^2.5.3",
     "less-loader": "^2.2.2",
-     "lodash": "3.9.3",
+    "lodash": "3.9.3",
     "lodash-contrib": "393.0.1",
+    "null-loader": "^0.1.1",
     "node-sass": "^3.10.0",
     "raw-loader": "^0.5.1",
     "react": "^0.14.3",
@@ -54,21 +58,21 @@
     "redux": "^3.0.5",
     "redux-logger": "^2.3.1",
     "redux-thunk": "^1.0.3",
-     "react-leaflet": "0.12.0",
+    "react-leaflet": "0.12.0",
     "reselect": "^2.0.1",
-     "rx": "3.0.0",
+    "rx": "3.0.0",
     "sass-loader": "^4.0.2",
     "style-loader": "^0.13.0",
     "superagent": "1.4.0",
     "superagent-promise": "1.0.3",
     "url-loader": "^0.5.7",
-    "webpack": "^1.12.9",
+    "webpack": "^1.13.2",
+    "react-bootstrap": "^0.30.3"
+  },
+  "devDependencies": {
+    "babel-preset-react-hmre": "^1.1.1",
     "webpack-dev-server": "~1.15",
-    "react-bootstrap": "^0.30.3",
     "webpack-dev-middleware": "^1.10.1",
     "webpack-hot-middleware": "^2.17.0"
-  },
-  "dependencies": {
-    "babel-preset-react-hmre": "^1.1.1"
   }
 }
