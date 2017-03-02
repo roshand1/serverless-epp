@@ -33,7 +33,8 @@ var loaders = [
         }
     },
     { test: /\.json$/, loader: 'json', exclude: /node_modules/ },
-    { test: /\.raw\.less$/, loader: 'raw!less?strictMath&noIeCompat' }
+    { test: /\.raw\.less$/, loader: 'raw!less?strictMath&noIeCompat' },
+  	{ test: /\.png$/, loader: 'url-loader?mimetype=image/png' }
 ];
 var stylesLoaders = {
     server: [
