@@ -18,10 +18,13 @@
 .epp-top-ad {
     position: fixed;
     width: 100%;
+    padding:15px;
     z-index: 9999;
     top: 60px;
-    background: #dcf2f9;
+    background: rgba(220, 242, 249, .9);
     text-align:center;
+    box-shadow: 1px 1px 1px #cce4ec;
+ 
 }
 
 .hg3-i-times-circle:before {
@@ -63,3 +66,84 @@
     border-bottom: 2px solid #ccc;
 }
 @import './CommonBundleRoot';
+
+
+#content-section {
+    
+    .practice-name{
+        padding:15px;
+        margin-top:180px;
+    }
+    .content-left{
+        margin-top:15px;
+
+        .componentWrap{
+            #component-hgOfficeInfo{
+                width:76%;
+                padding-top: 0;
+
+                .leaflet-right{
+                    left:0;
+
+                    .leaflet-control{
+                        float:left;
+                    }
+                }
+            }
+            #hospital-tabs{
+                padding-right:10px;
+            }
+            .hg3-office-map-display{
+                box-shadow:none;
+            }
+
+
+        }
+        .hg3-testimonial-content{
+            h2{
+                display:none;
+            }
+        }
+    }
+}
+
+
+
+    #rightTop{
+        width:100%;
+        max-width: 1365px;
+        margin: auto;
+        position:absolute;
+        top:298px;
+        left: 0;
+        right: 0;
+       
+        #div-gpt-ad-aboveright1{
+            margin-right: 25px;
+            border-left: 15px solid #fff;
+            float:right;
+            background:#fff;
+           
+        }
+    }
+
+@import 'CommonBundleRoot.less';
+@import 'index.less';
+@import 'templateStyle.scss';
+@hgPath: '../../node_modules/@hg/';
+@hgComponentsPath: '../../node_modules/@healthgrades/';
+@eppPath:'./components/';
+
+//@import '@{eppPath}HgAboutUs/_hg-about-us.less';
+@import '@{eppPath}HgHero/_hg-hero.less';
+@import '@{eppPath}HgLeaflet/_hg-leaflet.less';
+@import '@{eppPath}HgLogo/_hg-logo.less';
+@import '@{eppPath}HgOfficeLocation/_hg-office-location.less';
+@import '@{eppPath}HgOurProviders/_hg-our-providers.less';
+@import '@{eppPath}HgPracticeLinks/_hg-practice-links.less';
+@import '@{eppPath}HgSectionTitle/_hg-section-title.less';
+@import '@{eppPath}HgContentAdCards/ContentAndAd/_hg-ContentAndAd.less';
+
+@import '@{eppPath}HgHeader.less';
+@import '@{eppPath}HgPracticeProfile.less';
+@import '@{eppPath}HgTestimonial/_testimonial.less';
